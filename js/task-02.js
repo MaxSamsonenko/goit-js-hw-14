@@ -6,11 +6,12 @@ const ingredients = [
 	"Herbs",
 	"Condiments",
 ];
-const list = document.querySelector("#ingredients");
+const ul = document.querySelector("#ingredients");
 
-ingredients.forEach((item) => {
-	const liElem = document.createElement("li");
-	liElem.innerText = item;
-	liElem.classList = "item";
-	list.append(liElem);
+const markup = ingredients.map((item) => {
+	const li = document.createElement("li");
+	li.innerText = item;
+	li.classList = "item";
+	return li;
 });
+ul.append(...markup);
